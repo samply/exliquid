@@ -1,0 +1,133 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "exliquid",
+        "meta": {
+          "profile": [
+            "https://fhir.bbmri.de/StructureDefinition/Collection"
+          ]
+        },
+        "name": "EXLIQUID"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/exliquid"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Measure",
+        "id": "exliquid",
+        "name": "EXLIQUID",
+        "url": "https://ccp.de/Measure/exliquid",
+        "status": "active",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/resource-types",
+              "code": "Specimen"
+            }
+          ]
+        },
+        "library": [
+          "https://ccp.de/Library/exliquid"
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+              "code": "cohort"
+            }
+          ]
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "language": "text/cql",
+                  "expression": "InInitialPopulation"
+                }
+              }
+            ],
+            "stratifier": [
+              {
+                "component": [
+                  {
+                    "code": {
+                      "text": "Diagnosis"
+                    },
+                    "criteria": {
+                      "language": "text/cql",
+                      "expression": "Diagnosis"
+                    }
+                  },
+                  {
+                    "code": {
+                      "text": "SampleType"
+                    },
+                    "criteria": {
+                      "language": "text/cql",
+                      "expression": "SampleType"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Measure/exliquid"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Library",
+        "id": "exliquid",
+        "name": "EXLIQUID",
+        "url": "https://ccp.de/Library/exliquid",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/library-type",
+              "code": "logic-library"
+            }
+          ]
+        },
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/resource-types",
+              "code": "Specimen"
+            }
+          ]
+        },
+        "content": [
+          {
+            "contentType": "text/cql",
+            "data": "bGlicmFyeSBSZXRyaWV2ZQp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4wJwppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4wJwoKY29udGV4dCBTcGVjaW1lbgoKZGVmaW5lIEluSW5pdGlhbFBvcHVsYXRpb246CiAgZXhpc3RzCiAgICBmcm9tIFNwZWNpbWVuLmV4dGVuc2lvbiBFCiAgICB3aGVyZSBFLnVybCA9ICdodHRwczovL2ZoaXIuYmJtcmkuZGUvU3RydWN0dXJlRGVmaW5pdGlvbi9DdXN0b2RpYW4nCiAgICAgIGFuZCAoRS52YWx1ZSBhcyBSZWZlcmVuY2UpLnJlZmVyZW5jZSA9ICdPcmdhbml6YXRpb24vZXhsaXF1aWQnCgpkZWZpbmUgUGF0aWVudDoKICBzaW5nbGV0b24gZnJvbSAoW1BhdGllbnRdKQoKZGVmaW5lIERpYWdub3NpczoKICBGaXJzdChmcm9tIFtQYXRpZW50IC0+IENvbmRpdGlvbl0gQwogICAgcmV0dXJuIEMuY29kZS5jb2Rpbmcud2hlcmUoc3lzdGVtID0gJ2h0dHA6Ly9maGlyLmRlL0NvZGVTeXN0ZW0vZGltZGkvaWNkLTEwLWdtJykuY29kZS5maXJzdCgpKQoKZGVmaW5lIFNhbXBsZVR5cGU6CiAgRmlyc3QoZnJvbSBTcGVjaW1lbi50eXBlLmNvZGluZyBDCiAgICB3aGVyZSBDLnN5c3RlbSA9ICdodHRwczovL2ZoaXIuYmJtcmkuZGUvQ29kZVN5c3RlbS9TYW1wbGVNYXRlcmlhbFR5cGUnCiAgICByZXR1cm4gQy5jb2RlKQo="
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Library/exliquid"
+      }
+    }
+  ]
+}
