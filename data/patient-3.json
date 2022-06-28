@@ -9,13 +9,13 @@
         "url": "Patient/3"
       },
       "resource": {
+        "resourceType": "Patient",
         "id": "3",
         "meta": {
           "profile": [
             "https://fhir.bbmri.de/StructureDefinition/Patient"
           ]
-        },
-        "resourceType": "Patient"
+        }
       }
     },
     {
@@ -25,13 +25,13 @@
         "url": "Condition/3-1"
       },
       "resource": {
+        "resourceType": "Condition",
         "id": "3-1",
         "meta": {
           "profile": [
             "https://fhir.bbmri.de/StructureDefinition/Condition"
           ]
         },
-        "resourceType": "Condition",
         "code": {
           "coding": [
             {
@@ -52,21 +52,18 @@
         "url": "Specimen/3-1"
       },
       "resource": {
-        "extension": [
-          {
-            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
-            "valueReference": {
-              "reference": "Organization/exliquid"
-            }
-          }
-        ],
+        "resourceType": "Specimen",
         "id": "3-1",
         "meta": {
           "profile": [
             "https://fhir.bbmri.de/StructureDefinition/Specimen"
           ]
         },
-        "resourceType": "Specimen",
+        "identifier": [
+          {
+            "system": "https://dktk.dkfz.de/fhir/NamingSystem/exliquid-specimen"
+          }
+        ],
         "subject": {
           "reference": "Patient/3"
         },
@@ -87,21 +84,18 @@
         "url": "Specimen/3-2"
       },
       "resource": {
-        "extension": [
-          {
-            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
-            "valueReference": {
-              "reference": "Organization/exliquid"
-            }
-          }
-        ],
+        "resourceType": "Specimen",
         "id": "3-2",
         "meta": {
           "profile": [
             "https://fhir.bbmri.de/StructureDefinition/Specimen"
           ]
         },
-        "resourceType": "Specimen",
+        "identifier": [
+          {
+            "system": "https://dktk.dkfz.de/fhir/NamingSystem/exliquid-specimen"
+          }
+        ],
         "subject": {
           "reference": "Patient/3"
         },

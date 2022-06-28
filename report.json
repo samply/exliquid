@@ -1,0 +1,234 @@
+{
+  "extension": [
+    {
+      "url": "https://samply.github.io/blaze/fhir/StructureDefinition/eval-duration",
+      "valueQuantity": {
+        "value": 0.017673541,
+        "unit": "s",
+        "system": "http://unitsofmeasure.org",
+        "code": "s"
+      }
+    }
+  ],
+  "status": "complete",
+  "type": "summary",
+  "measure": "https://dktk.dkfz.de/fhir/Measure/exliquid",
+  "date": "2022-06-28T12:05:29.523254+02:00",
+  "period": {
+    "start": "1900",
+    "end": "2100"
+  },
+  "group": [
+    {
+      "_comment": "This is the group with patient count and diagnosis stratification.",
+      "code": {
+        "coding": [
+          {
+            "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-measure-group",
+            "code": "patient"
+          }
+        ]
+      },
+      "population": [
+        {
+          "_comment": "This is the total number of patients of that site.",
+          "count": 3,
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "stratum": [
+            {
+              "value": {
+                "text": "C34.9"
+              },
+              "population": [
+                {
+                  "_comment": "This is the number of patients with the diagnosis `C34.9`.",
+                  "count": 1,
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "initial-population"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "C50.9"
+              },
+              "population": [
+                {
+                  "_comment": "This is the number of patients with the diagnosis `C50.9`.",
+                  "count": 2,
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "initial-population"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "code": [
+            {
+              "coding": [
+                {
+                  "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-stratifier",
+                  "code": "diagnosis"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "This is the group with specimen count and diagnosis, sample-type stratification.",
+      "code": {
+        "coding": [
+          {
+            "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-measure-group",
+            "code": "specimen"
+          }
+        ]
+      },
+      "population": [
+        {
+          "_comment": "This is the total number of specimen of that site.",
+          "count": 7,
+          "code": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                "code": "initial-population"
+              }
+            ]
+          }
+        }
+      ],
+      "stratifier": [
+        {
+          "stratum": [
+            {
+              "value": {
+                "text": "C34.9"
+              },
+              "population": [
+                {
+                  "_comment": "This is the number of plasma specimen with the diagnosis `C34.9`.",
+                  "count": 2,
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "initial-population"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "C50.9"
+              },
+              "population": [
+                {
+                  "_comment": "This is the number of plasma specimen with the diagnosis `C50.9`.",
+                  "count": 3,
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "initial-population"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "code": [
+            {
+              "coding": [
+                {
+                  "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-stratifier",
+                  "code": "plasma-diagnosis"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "stratum": [
+            {
+              "value": {
+                "text": "C34.9"
+              },
+              "population": [
+                {
+                  "_comment": "This is the number of PBMC specimen with the diagnosis `C34.9`.",
+                  "count": 3,
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "initial-population"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "value": {
+                "text": "C50.9"
+              },
+              "population": [
+                {
+                  "_comment": "This is the number of PBMC specimen with the diagnosis `C50.9`.",
+                  "count": 4,
+                  "code": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                        "code": "initial-population"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ],
+          "code": [
+            {
+              "coding": [
+                {
+                  "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-stratifier",
+                  "code": "pbmc-diagnosis"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resourceType": "MeasureReport"
+}

@@ -9,13 +9,13 @@
         "url": "Patient/2"
       },
       "resource": {
+        "resourceType": "Patient",
         "id": "2",
         "meta": {
           "profile": [
             "https://fhir.bbmri.de/StructureDefinition/Patient"
           ]
-        },
-        "resourceType": "Patient"
+        }
       }
     },
     {
@@ -52,21 +52,18 @@
         "url": "Specimen/2-1"
       },
       "resource": {
-        "extension": [
-          {
-            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
-            "valueReference": {
-              "reference": "Organization/exliquid"
-            }
-          }
-        ],
+        "resourceType": "Specimen",
         "id": "2-1",
         "meta": {
           "profile": [
             "https://fhir.bbmri.de/StructureDefinition/Specimen"
           ]
         },
-        "resourceType": "Specimen",
+        "identifier": [
+          {
+            "system": "https://dktk.dkfz.de/fhir/NamingSystem/exliquid-specimen"
+          }
+        ],
         "subject": {
           "reference": "Patient/2"
         },
@@ -87,21 +84,18 @@
         "url": "Specimen/2-2"
       },
       "resource": {
-        "extension": [
-          {
-            "url": "https://fhir.bbmri.de/StructureDefinition/Custodian",
-            "valueReference": {
-              "reference": "Organization/exliquid"
-            }
-          }
-        ],
+        "resourceType": "Specimen",
         "id": "2-2",
         "meta": {
           "profile": [
             "https://fhir.bbmri.de/StructureDefinition/Specimen"
           ]
         },
-        "resourceType": "Specimen",
+        "identifier": [
+          {
+            "system": "https://dktk.dkfz.de/fhir/NamingSystem/exliquid-specimen"
+          }
+        ],
         "subject": {
           "reference": "Patient/2"
         },
