@@ -104,39 +104,44 @@
                 },
                 "criteria": {
                   "language": "text/cql-identifier",
-                  "expression": "InInitialPopulation"
+                  "expression": "ExliquidSpecimen"
                 }
               }
             ],
             "stratifier": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-stratifier",
-                      "code": "plasma-diagnosis"
+                "component": [
+                  {
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-stratifier",
+                          "code": "sample-diagnosis"
+                        }
+                      ]
+                    },
+                    "criteria": {
+                      "language": "text/cql-identifier",
+                      "expression": "Diagnosis"
                     }
-                  ]
-                },
-                "criteria": {
-                  "language": "text/cql-identifier",
-                  "expression": "PlasmaDiagnosis"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-stratifier",
-                      "code": "pbmc-diagnosis"
+                  },
+                  {
+                    "code": {
+                      "coding": [
+                        {
+                          "system": "https://dktk.dkfz.de/fhir/CodeSystem/exliquid-stratifier",
+                          "code": "sample-type"
+                        }
+                      ]
+                    },
+                    "criteria": {
+                      "language": "text/cql-identifier",
+                      "expression": "SampleType"
                     }
-                  ]
-                },
-                "criteria": {
-                  "language": "text/cql-identifier",
-                  "expression": "PbmcDiagnosis"
-                }
-              }            ]
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -171,7 +176,7 @@
         "content": [
           {
             "contentType": "text/cql",
-            "data": "bGlicmFyeSBSZXRyaWV2ZQp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4wJwppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4wJwoKY29kZXN5c3RlbSBTYW1wbGVNYXRlcmlhbFR5cGU6ICdodHRwczovL2ZoaXIuYmJtcmkuZGUvQ29kZVN5c3RlbS9TYW1wbGVNYXRlcmlhbFR5cGUnCgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSBJbkluaXRpYWxQb3B1bGF0aW9uOgogIGV4aXN0cwogICAgZnJvbSBbU3BlY2ltZW5dIFMKICAgIHdoZXJlIFMuaWRlbnRpZmllci5zeXN0ZW0gY29udGFpbnMgJ2h0dHBzOi8vZGt0ay5ka2Z6LmRlL2ZoaXIvTmFtaW5nU3lzdGVtL2V4bGlxdWlkLXNwZWNpbWVuJwoKZGVmaW5lIERpYWdub3NpczoKICBGaXJzdChmcm9tIFtDb25kaXRpb25dIEMKICAgIHJldHVybiBDLmNvZGUuY29kaW5nLndoZXJlKHN5c3RlbSA9ICdodHRwOi8vZmhpci5kZS9Db2RlU3lzdGVtL2RpbWRpL2ljZC0xMC1nbScpLmNvZGUuZmlyc3QoKSkKCmRlZmluZSBTYW1wbGVUeXBlOgogIEZpcnN0KGZyb20gW1NwZWNpbWVuXSBTCiAgICByZXR1cm4gUy50eXBlLmNvZGluZy53aGVyZShzeXN0ZW0gPSAnaHR0cHM6Ly9maGlyLmJibXJpLmRlL0NvZGVTeXN0ZW0vU2FtcGxlTWF0ZXJpYWxUeXBlJykuY29kZS5maXJzdCgpKQoKZGVmaW5lIFBsYXNtYURpYWdub3NpczoKICBpZiBleGlzdHMgW1NwZWNpbWVuOiBDb2RlICdibG9vZC1wbGFzbWEnIGZyb20gU2FtcGxlTWF0ZXJpYWxUeXBlXSB0aGVuIERpYWdub3NpcyBlbHNlIG51bGwKCmRlZmluZSBQYm1jRGlhZ25vc2lzOgogIGlmIGV4aXN0cyBbU3BlY2ltZW46IENvZGUgJ3BlcmlwaGVyYWwtYmxvb2QtY2VsbHMtdml0YWwnIGZyb20gU2FtcGxlTWF0ZXJpYWxUeXBlXSB0aGVuIERpYWdub3NpcyBlbHNlIG51bGwK"
+            "data": "bGlicmFyeSBSZXRyaWV2ZQp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4wJwppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4wJwoKY29kZXN5c3RlbSBTYW1wbGVNYXRlcmlhbFR5cGU6ICdodHRwczovL2ZoaXIuYmJtcmkuZGUvQ29kZVN5c3RlbS9TYW1wbGVNYXRlcmlhbFR5cGUnCgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSBFeGxpcXVpZFNwZWNpbWVuOgogIGZyb20gW1NwZWNpbWVuXSBTCiAgd2hlcmUgUy5pZGVudGlmaWVyLnN5c3RlbSBjb250YWlucyAnaHR0cHM6Ly9ka3RrLmRrZnouZGUvZmhpci9OYW1pbmdTeXN0ZW0vZXhsaXF1aWQtc3BlY2ltZW4nCgpkZWZpbmUgSW5Jbml0aWFsUG9wdWxhdGlvbjoKICBleGlzdHMgRXhsaXF1aWRTcGVjaW1lbgoKZGVmaW5lIERpYWdub3NpczoKICBGaXJzdChmcm9tIFtDb25kaXRpb25dIEMKICAgIHJldHVybiBDLmNvZGUuY29kaW5nLndoZXJlKHN5c3RlbSA9ICdodHRwOi8vZmhpci5kZS9Db2RlU3lzdGVtL2RpbWRpL2ljZC0xMC1nbScpLmNvZGUuZmlyc3QoKSkKCmRlZmluZSBmdW5jdGlvbiBTYW1wbGVUeXBlKHNwZWNpbWVuIEZISVIuU3BlY2ltZW4pOgogIHNwZWNpbWVuLnR5cGUuY29kaW5nLndoZXJlKHN5c3RlbSA9ICdodHRwczovL2ZoaXIuYmJtcmkuZGUvQ29kZVN5c3RlbS9TYW1wbGVNYXRlcmlhbFR5cGUnKS5jb2RlLmZpcnN0KCkK"
           }
         ]
       },
